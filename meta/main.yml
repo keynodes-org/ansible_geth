@@ -1,0 +1,19 @@
+galaxy_info:
+  author: nokey
+  description: Ansible role for deploying Geth Ethereum Execution layer node
+  namespace: keynodes
+  role_name: ansible_geth
+  company: keynodes
+  license: MIT
+  min_ansible_version: "2.9"
+  platforms:
+  - name: Ubuntu
+    versions:
+      - "jammy"
+
+  galaxy_tags:
+    - geth
+    - execution
+    - ethereum
+
+dependencies: []

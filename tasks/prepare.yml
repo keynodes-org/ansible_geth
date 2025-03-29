@@ -1,0 +1,34 @@
+---
+- name: geth - create group
+  group:
+    name: "{{ geth_group }}"
+    state: present
+
+- name: geth - user configuration
+  user:
+    name: "{{ geth_user }}"
+    group: "{{ geth_group }}"
+    append: true
+    shell: /usr/sbin/nologin
+    create_home: false
+
+- name: geth - create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: "0755"
+    owner: "{{ geth_user }}"
+    group: "{{ geth_group }}"
+  with_items:
+    - "{{ geth_dir_base }}"
+    - "{{ geth_dir_data }}"
+    - "{{ geth_dir_config }}"
+    - "{{ geth_dir_log }}"
+
+- name: geth - install required apt packages
+  apt:
+    name:
+      - curl
+      - openssl
+      - gcc
+    update_cache: true

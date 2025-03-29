@@ -1,0 +1,16 @@
+[Unit]
+Description=Ethereum Geth Node
+After=network.target
+
+[Service]
+User={{ geth_user }}
+Group={{ geth_group }}
+ExecStart={{ geth_binary_path }} --config {{ geth_dir_config }}/config.toml
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=30
+
+Environment="TMPDIR=/var/tmp"
+
+[Install]
+WantedBy=multi-user.target
