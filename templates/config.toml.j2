@@ -1,0 +1,105 @@
+[Eth]
+NetworkId = {{ geth_network_id }}
+SyncMode = "{{ geth_sync_mode }}"
+HistoryMode = "{{ geth_history_mode }}"
+EthDiscoveryURLs = {{ geth_eth_discovery_urls }}
+SnapDiscoveryURLs = {{ geth_snap_discovery_urls }}
+NoPruning = {{ geth_no_pruning | lower }}
+NoPrefetch = {{ geth_no_prefetch | lower }}
+TxLookupLimit = {{ geth_tx_lookup_limit }}
+TransactionHistory = {{ geth_transaction_history }}
+StateHistory = {{ geth_state_history }}
+DatabaseCache = {{ geth_database_cache }}
+DatabaseFreezer = "{{ geth_database_freezer }}"
+TrieCleanCache = {{ geth_trie_clean_cache }}
+TrieDirtyCache = {{ geth_trie_dirty_cache }}
+TrieTimeout = {{ geth_trie_timeout }}
+SnapshotCache = {{ geth_snapshot_cache }}
+Preimages = {{ geth_preimages | lower }}
+FilterLogCacheSize = {{ geth_filter_log_cache_size }}
+EnablePreimageRecording = {{ geth_enable_preimage_recording | lower }}
+VMTrace = "{{ geth_vm_trace }}"
+VMTraceJsonConfig = "{{ geth_vm_trace_json_config }}"
+RPCGasCap = {{ geth_rpc_gas_cap }}
+RPCEVMTimeout = {{ geth_rpc_evm_timeout }}
+RPCTxFeeCap = {{ geth_rpc_tx_fee_cap }}
+
+[Eth.Miner]
+GasCeil = {{ geth_miner_gas_ceil }}
+GasPrice = {{ geth_miner_gas_price }}
+Recommit = {{ geth_miner_recommit }}
+
+[Eth.TxPool]
+Locals = {{ geth_txpool_locals }}
+NoLocals = {{ geth_txpool_no_locals | lower }}
+Journal = "{{ geth_txpool_journal }}"
+Rejournal = {{ geth_txpool_rejournal }}
+PriceLimit = {{ geth_txpool_price_limit }}
+PriceBump = {{ geth_txpool_price_bump }}
+AccountSlots = {{ geth_txpool_account_slots }}
+GlobalSlots = {{ geth_txpool_global_slots }}
+AccountQueue = {{ geth_txpool_account_queue }}
+GlobalQueue = {{ geth_txpool_global_queue }}
+Lifetime = {{ geth_txpool_lifetime }}
+
+[Eth.BlobPool]
+Datadir = "{{ geth_blobpool_datadir }}"
+Datacap = {{ geth_blobpool_datacap }}
+PriceBump = {{ geth_blobpool_price_bump }}
+
+[Eth.GPO]
+Blocks = {{ geth_gpo_blocks }}
+Percentile = {{ geth_gpo_percentile }}
+MaxHeaderHistory = {{ geth_gpo_max_header_history }}
+MaxBlockHistory = {{ geth_gpo_max_block_history }}
+MaxPrice = {{ geth_gpo_max_price }}
+IgnorePrice = {{ geth_gpo_ignore_price }}
+
+[Node]
+DataDir = "{{ geth_node_datadir }}"
+IPCPath = "{{ geth_node_ipc_path }}"
+HTTPHost = "{{ geth_node_http_host }}"
+HTTPPort = {{ geth_node_http_port }}
+HTTPVirtualHosts = {{ geth_node_http_virtual_hosts }}
+HTTPModules = {{ geth_node_http_modules }}
+AuthAddr = "{{ geth_node_auth_addr }}"
+AuthPort = {{ geth_node_auth_port }}
+AuthVirtualHosts = {{ geth_node_auth_virtual_hosts }}
+WSHost = "{{ geth_node_ws_host }}"
+WSPort = {{ geth_node_ws_port }}
+WSModules = {{ geth_node_ws_modules }}
+GraphQLVirtualHosts = {{ geth_node_graphql_virtual_hosts }}
+BatchRequestLimit = {{ geth_node_batch_request_limit }}
+BatchResponseMaxSize = {{ geth_node_batch_response_max_size }}
+
+[Node.P2P]
+MaxPeers = {{ geth_p2p_max_peers }}
+NoDiscovery = {{ geth_p2p_no_discovery | lower }}
+DiscoveryV4 = {{ geth_p2p_discovery_v4 | lower }}
+DiscoveryV5 = {{ geth_p2p_discovery_v5 | lower }}
+BootstrapNodes = {{ geth_p2p_bootstrap_nodes }}
+BootstrapNodesV5 = {{ geth_p2p_bootstrap_nodes_v5 }}
+StaticNodes = {{ geth_p2p_static_nodes }}
+TrustedNodes = {{ geth_p2p_trusted_nodes }}
+ListenAddr = "{{ geth_p2p_listen_addr }}"
+DiscAddr = "{{ geth_p2p_disc_addr }}"
+NAT = "{{ geth_p2p_nat }}"
+EnableMsgEvents = {{ geth_p2p_enable_msg_events | lower }}
+
+[Node.HTTPTimeouts]
+ReadTimeout = {{ geth_http_read_timeout }}
+ReadHeaderTimeout = {{ geth_http_read_header_timeout }}
+WriteTimeout = {{ geth_http_write_timeout }}
+IdleTimeout = {{ geth_http_idle_timeout }}
+
+[Metrics]
+HTTP = "{{ geth_metrics_http }}"
+Port = {{ geth_metrics_port }}
+InfluxDBEndpoint = "{{ geth_metrics_influxdb_endpoint }}"
+InfluxDBDatabase = "{{ geth_metrics_influxdb_database }}"
+InfluxDBUsername = "{{ geth_metrics_influxdb_username }}"
+InfluxDBPassword = "{{ geth_metrics_influxdb_password }}"
+InfluxDBTags = "{{ geth_metrics_influxdb_tags }}"
+InfluxDBToken = "{{ geth_metrics_influxdb_token }}"
+InfluxDBBucket = "{{ geth_metrics_influxdb_bucket }}"
+InfluxDBOrganization = "{{ geth_metrics_influxdb_organization }}"

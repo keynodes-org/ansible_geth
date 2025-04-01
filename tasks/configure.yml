@@ -1,0 +1,20 @@
+---
+- name: geth - check if JWT secret exists
+  stat:
+    path: "{{ geth_jwt_secret_path }}"
+  register: jwt_secret_file
+
+- name: geth - generate JWT secret if not exists
+  command: "openssl rand -hex -out {{ geth_jwt_secret_path }} 32"
+  when: not jwt_secret_file.stat.exists
+  become: true
+
+- name: geth - copy configuration file
+  template:
+    src: config.toml.j2
+    dest: "{{ geth_dir_config }}/config.toml"
+    owner: "{{ geth_user }}"
+    group: "{{ geth_group }}"
+    mode: "0644"
+  notify:
+    - geth - restart
