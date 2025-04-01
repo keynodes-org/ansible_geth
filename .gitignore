@@ -7,6 +7,7 @@ vault_pass.txt
 .secrets/
 *.secret
 *.token
+.ansible/
 
 # ---------------------------
 # Python-related artifacts
