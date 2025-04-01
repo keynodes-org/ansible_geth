@@ -240,7 +240,7 @@ geth_gpo_ignore_price: 2
 # Node configuration
 # @var geth_node_datadir:description: >
 # Data directory for the Ethereum node.
-geth_node_datadir: "/home/ubuntu/.ethereum"
+geth_node_datadir: "{{ geth_dir_data }}/.ethereum"
 
 # @var geth_node_ipc_path:description: >
 # Filename for IPC socket/pipe within the datadir.

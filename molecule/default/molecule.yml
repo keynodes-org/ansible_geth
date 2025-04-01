@@ -6,6 +6,7 @@ platforms:
     image: jrei/systemd-ubuntu:22.04
     command: /sbin/init
     cgroupns_mode: host
+    platform: linux/amd64
     capabilities:
       - SYS_ADMIN
     volumes:
