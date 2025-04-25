@@ -49,6 +49,11 @@ geth_reinstall: false
 # The network ID of the Ethereum network to connect to.
 geth_network_id: 560048
 
+# Ethereum network parameters
+# @var geth_network_name:description: >
+# The network name of the Ethereum network  ("mainnet, sepolia, hoodi, etc")
+geth_network_name: hoodi
+
 # @var geth_sync_mode:description: >
 # Blockchain sync mode ("fast", "full", "snap" or "light").
 geth_sync_mode: "snap"
@@ -265,6 +270,7 @@ geth_node_http_modules:
   - "net"
   - "web3"
   - "eth"
+  - "engine"
 
 # @var geth_node_auth_addr:description: >
 # Listening address for authenticated APIs.
@@ -293,6 +299,7 @@ geth_node_ws_modules:
   - "net"
   - "web3"
   - "eth"
+  - "engine"
 
 # @var geth_node_graphql_virtual_hosts:description: >
 # List of virtual hostnames from which to accept GraphQL requests.
