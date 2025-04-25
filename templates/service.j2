@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User={{ geth_user }}
 Group={{ geth_group }}
-ExecStart={{ geth_binary_path }} {{ geth_network_name }} --config {{ geth_dir_config }}/config.toml
+ExecStart={{ geth_binary_path }} --{{ geth_network_name }} --config {{ geth_dir_config }}/config.toml
 Restart=on-failure
 RestartSec=10
 TimeoutStopSec=30
